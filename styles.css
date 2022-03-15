@@ -1,3 +1,67 @@
 /* styles.css */
 
 /* Add styles here to customize the appearance of your app */
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#canvas-over-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+#options {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  height: 3rem;
+  display: flex;
+}
+
+#options .splitter {
+  border-right: 1px solid #aaa;
+  margin: 0 1rem;
+}
+
+#options .pen svg,
+#options .color svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+#options .pen,
+#options .color {
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#options .color[data-color="red"] svg {
+  fill: red;
+}
+#options .color[data-color="green"] svg {
+  fill: green;
+}
+#options .color[data-color="yellow"] svg {
+  fill: yellow;
+}
+#options .color[data-color="blue"] svg {
+  fill: blue;
+}
+
+#options[data-pen="pencil"] [data-pen="pencil"]::after,
+#options[data-pen="paintbrush"] [data-pen="paintbrush"]::after,
+#options[data-pen="brush"] [data-pen="brush"]::after,
+#options[data-color="black"] [data-color="black"]::after,
+#options[data-color="red"] [data-color="red"]::after,
+#options[data-color="yellow"] [data-color="yellow"]::after,
+#options[data-color="blue"] [data-color="blue"]::after,
+#options[data-color="green"] [data-color="green"]::after {
+  content: "";
+  width: 1rem;
+  height: 3px;
+  margin-top: 4px;
+  background-color: #5b5fc7;
+}
